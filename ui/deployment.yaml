@@ -4,7 +4,7 @@ metadata:
   name: load-demo-ui
   namespace: load-demo
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       namespace: load-demo
