@@ -2,10 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: load-demo-api
+  namespace: load-demo
 spec:
   replicas: 3
   template:
     metadata:
+      namespace: load-demo
       labels:
         app: load-demo-api
         version: "1"
@@ -16,3 +18,10 @@ spec:
         image: jhgaylor/k8s-load-demo-api:latest
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 40Mi
+          requests:
+            cpu: 50m
+            memory: 20Mi

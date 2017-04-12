@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: load-demo-api
+  namespace: load-demo
 spec:
   selector:
     app: load-demo-api

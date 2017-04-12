@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: load-demo-api
+  namespace: load-demo
+spec:
+  minReplicas: 3
+  maxReplicas: 30
+  targetCPUUtilizationPercentage: 50
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: load-demo-api

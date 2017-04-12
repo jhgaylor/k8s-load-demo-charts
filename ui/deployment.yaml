@@ -2,10 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: load-demo-ui
+  namespace: load-demo
 spec:
   replicas: 3
   template:
     metadata:
+      namespace: load-demo
       labels:
         app: load-demo-ui
         version: "1"
